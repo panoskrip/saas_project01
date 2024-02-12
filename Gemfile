@@ -12,6 +12,8 @@ gem 'jquery-rails'
 
 gem 'devise'
 
+gem 'bootstrap_form'
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
