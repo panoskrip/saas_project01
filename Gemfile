@@ -8,6 +8,8 @@ gem "rails", "~> 7.1.3"
 gem 'bootstrap-sass'
 gem 'sass-rails'
 
+gem 'faker'
+
 gem 'jquery-rails'
 
 gem 'devise'
