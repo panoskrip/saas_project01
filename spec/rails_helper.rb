@@ -4,14 +4,7 @@ ENV['RAILS_ENV'] ||= 'test'
 
 require File.expand_path('../config/environment', __dir__)
 
-require 'capybara/poltergeist'
-require 'factory_girl_rails'
-require 'capybara/rspec'
 
-config.include Devise::Test::IntegrationHelpers, type: :feature
-config.include FactoryGirl::Syntax::Methods
-Capybara.javascript_driver = :poltergeist
-Capybara.server = :puma 
 
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
@@ -49,6 +42,15 @@ RSpec.configure do |config|
   # examples within a transaction, remove the following line or assign false
   # instead of true.
   config.use_transactional_fixtures = false
+
+  require 'capybara/poltergeist'
+  require 'factory_bot_rails'
+  require 'capybara/rspec'
+
+  config.include Devise::Test::IntegrationHelpers, type: :feature
+  config.include FactoryBot::Syntax::Methods
+  Capybara.javascript_driver = :poltergeist
+  Capybara.server = :puma 
 
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)
