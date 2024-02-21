@@ -1,5 +1,5 @@
 console.log("test");
-$(document).on('turbolinks:load', function() {
+$(document).ready(function() {
     // when a post is clicked, show its full content in a modal window
     $("body").on( "click", ".single-post-card, .single-post-list", function() {
       console.log('test');
